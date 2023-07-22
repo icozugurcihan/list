@@ -1,0 +1,9 @@
+<div class="input-field">
+    <i class="material-icons prefix" ></i>
+    <input type="text" class="form-control" placeholder=" Add List Element..." #input (keydown.enter)="add(input)">
+</div>
+
+<app-lists-filters (update)="changeFilter($event)" [filters]="filters" [active]="activeFilter$ | async">
+</app-lists-filters>
+
+<app-lists [lists]="lists$ | async" (delete)="delete($event)" (complete)="complete($event)"></app-lists>
